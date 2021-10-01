@@ -15,7 +15,6 @@ mongoose
     console.log(err.message);
   });
 
-const PORT = process.env.PORT || 3001;
 const server = express();
 server.use(express.static(path.join(__dirname, "../frontend", "build")));
 server.use(express.json());
@@ -31,7 +30,7 @@ server.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend", "build", "index.html"));
 });
 
-server.listen(PORT, (err) => {
+server.listen(process.env.PORT || 3001, (err) => {
   if (err) console.log(err);
   else console.log("Listening on port " + PORT);
 });
