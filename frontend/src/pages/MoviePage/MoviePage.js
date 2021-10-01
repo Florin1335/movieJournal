@@ -4,6 +4,7 @@ import Movie from "./Movie";
 import Error from "./Error.js";
 import MovieList from "./MovieList";
 import Placeholder from "./Placeholder";
+import ListPlaceholder from "./ListPlaceholder";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -40,9 +41,15 @@ export default function MoviePage() {
         dispatch({ type: "error", value: "Eroare la conexiune..." });
       });
   }, [query]);
+
   return (
     <>
-      {isLoading && <Placeholder></Placeholder>}
+      {isLoading &&
+        (query.search(/t=/) !== -1 || query.search(/i=/) !== -1 ? (
+          <Placeholder></Placeholder>
+        ) : (
+          <ListPlaceholder></ListPlaceholder>
+        ))}
       {movie &&
         (movie.Search ? (
           <MovieList list={movie}></MovieList>

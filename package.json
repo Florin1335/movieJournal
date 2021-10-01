@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd backend && npm start"
+    "start": "cd backend && npm start",
+    "dev-build": "cd frontend && npm run build && cd ..",
+    "heroku-postbuild": "cd frontend && npm run build && cd .."
   },
   "author": "",
   "license": "ISC"

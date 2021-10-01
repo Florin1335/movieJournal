@@ -53,15 +53,22 @@ export default function LandingAnimation() {
       >
         <animated.div
           className="col-6"
-          id="divLeft"
-          style={{ position: "relative", ...leftStyles }}
+          style={{
+            position: "relative",
+            backgroundImage: `url('${process.env.PUBLIC_URL}/images/slice_0_0.png')`,
+            backgroundSize: "contain",
+            ...leftStyles,
+          }}
         >
           {resizeListenerLeft}
         </animated.div>
         <animated.div
           className="col-6"
-          id="divRight"
-          style={{ ...rightStyles }}
+          style={{
+            backgroundImage: `url('${process.env.PUBLIC_URL}/images/slice_0_1.png')`,
+            backgroundSize: "contain",
+            ...rightStyles,
+          }}
         ></animated.div>
       </div>
     </div>
