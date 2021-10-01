@@ -9,13 +9,16 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import UserInfo from "./pages/UserPanel/UserInfo";
 import UserWishlist from "./pages/UserPanel/UserWishlist";
 import UserHistory from "./pages/UserPanel/UserHistory";
+import LandingAnimation from "./LandingAnimation";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
   return (
     <Router>
+      <LandingAnimation></LandingAnimation>
       {localStorage.getItem("auth-token") && <AuthLoading></AuthLoading>}
       <Header></Header>
-      <main className="container mt-4 mt-sm-5">
+      <main className="mt-4 mt-sm-5 p-0">
         <Switch>
           <Route exact path="/">
             <LandingPage></LandingPage>
@@ -36,6 +39,7 @@ function App() {
             <UserHistory></UserHistory>
           </ProtectedRoute>
         </Switch>
+        <ScrollToTopButton></ScrollToTopButton>
       </main>
     </Router>
   );

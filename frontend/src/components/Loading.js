@@ -8,7 +8,7 @@ export default function Loading() {
         role="status"
         style={{ width: "5rem", height: "5rem" }}
       >
-        <span class="visually-hidden">Loading...</span>
+        <span className="visually-hidden">Loading...</span>
       </div>
     </div>
   );

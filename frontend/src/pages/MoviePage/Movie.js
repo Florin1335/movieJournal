@@ -5,9 +5,8 @@ import { useSelector } from "react-redux";
 
 export default function Movie({ movie }) {
   const isAuth = useSelector((state) => state.auth.isAuth);
-
   return (
-    <>
+    <div className="container">
       <div className="d-flex flex-column flex-md-row p-1 p-sm-2 p-md-3 darkerWhite">
         {movie.Poster && movie.Poster !== "N/A" && (
           <img
@@ -162,6 +161,6 @@ export default function Movie({ movie }) {
         </div>
       </div>
       {isAuth && <MovieButtons imdbID={movie.imdbID}></MovieButtons>}
-    </>
+    </div>
   );
 }

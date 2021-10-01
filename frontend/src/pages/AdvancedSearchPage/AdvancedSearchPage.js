@@ -22,7 +22,7 @@ export default function AdvancedSearchPage() {
   };
 
   return (
-    <div className="p-3 d-flex flex-column">
+    <div className="container p-3 d-flex flex-column">
       <p className="fs-5 text-center">
         Can't find your movie? Try the advanced search below to get a list of
         movies matching your search.

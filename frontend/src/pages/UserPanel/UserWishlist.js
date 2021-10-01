@@ -7,7 +7,7 @@ export default function UserWishlist() {
   const [data, isLoading] = useApiCall("/api/wishlist", "GET", true);
 
   return (
-    <div className="p-3">
+    <div className="container p-3">
       <h1 className="text-center mb-4">Wishlist</h1>
       {isLoading && <Loading></Loading>}
       {data && data.type === "failure" && (
@@ -19,7 +19,11 @@ export default function UserWishlist() {
             <h3 className="text-center">No movies saved in the wishlist.</h3>
           ) : (
             Object.keys(data.payload).map((value, index) => (
-              <MovieCard imdbID={value} date={data.payload[value]}></MovieCard>
+              <MovieCard
+                imdbID={value}
+                date={data.payload[value]}
+                key={index}
+              ></MovieCard>
             ))
           )}
         </div>

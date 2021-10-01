@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Movie from "./Movie";
 import Error from "./Error.js";
 import MovieList from "./MovieList";
+import Placeholder from "./Placeholder";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -41,6 +42,7 @@ export default function MoviePage() {
   }, [query]);
   return (
     <>
+      {isLoading && <Placeholder></Placeholder>}
       {movie &&
         (movie.Search ? (
           <MovieList list={movie}></MovieList>

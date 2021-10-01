@@ -45,6 +45,7 @@ auth.post("/login", async (req, res) => {
             jwt.sign(
               { id: exista._id },
               process.env.JWT_SECRET,
+              { expiresIn: "86400000ms" },
               (err, token) => {
                 if (err) res.status(400).json(err.message);
                 else {

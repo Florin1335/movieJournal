@@ -6,7 +6,7 @@ export default function UserInfo() {
   const [data, isLoading] = useApiCall("/api/infos", "GET", true);
 
   return (
-    <div>
+    <div className="container">
       {isLoading && <Loading></Loading>}
       {data && data.type === "failure" && (
         <h3 className="text-danger text-center p-4">{data.payload}</h3>

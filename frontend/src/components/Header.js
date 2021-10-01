@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <div className="d-flex flex-row pb-2 pb-sm-3">
       <Sidebar></Sidebar>
-      <header className="container w-100 ps-4 pe-4 pb-3">
+      <header className="w-100 ps-4 pe-4 pb-3">
         <div className="d-flex justify-content-center mb-2 mb-md-3">
           <Logo></Logo>
         </div>

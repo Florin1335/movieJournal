@@ -5,10 +5,16 @@ import UserSide from "./UserSide";
 export default function Sidebar() {
   return (
     <div
-      className="collapse collapse-horizontal fixed-top sidebar-width"
+      className="collapse collapse-horizontal sidebar-width"
       style={{
         color: "lightgray",
         backgroundColor: "black",
+        position: "fixed",
+        top: 0,
+        bottom: 0,
+        overflowY: "scroll",
+        overflowX: "hidden",
+        zIndex: 100000,
       }}
       id="target"
     >

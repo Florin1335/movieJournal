@@ -7,7 +7,7 @@ export default function UserHistory() {
   const [data, isLoading] = useApiCall("/api/history", "GET", true);
 
   return (
-    <div className="p-3">
+    <div className="container p-3">
       <h1 className="text-center mb-4">History</h1>
       {isLoading && <Loading></Loading>}
       {data && data.type === "failure" && (
@@ -19,7 +19,11 @@ export default function UserHistory() {
             <h3 className="text-center">No movies saved in the history.</h3>
           ) : (
             Object.keys(data.payload).map((value, index) => (
-              <MovieCard imdbID={value} date={data.payload[value]}></MovieCard>
+              <MovieCard
+                imdbID={value}
+                date={data.payload[value]}
+                key={index}
+              ></MovieCard>
             ))
           )}
         </div>
