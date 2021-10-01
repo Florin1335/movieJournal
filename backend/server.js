@@ -1,11 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
-require("dotenv").config();
+if (!process.env.NODE_ENV) require("dotenv").config();
 const auth = require("./routes/authentication.js");
 const userActions = require("./routes/userActions.js");
 const userInfos = require("./routes/userInfos.js");
 const path = require("path");
 
+const PORT = process.env.PORT || 3001;
 mongoose
   .connect(process.env.MONGODB_ATLAS_URL)
   .then(() => {
@@ -30,7 +31,7 @@ server.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend", "build", "index.html"));
 });
 
-server.listen(process.env.PORT || 3001, (err) => {
+server.listen(PORT, (err) => {
   if (err) console.log(err);
   else console.log("Listening on port " + PORT);
 });
