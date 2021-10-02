@@ -31,7 +31,7 @@ export default function MoviePage() {
 
   useEffect(() => {
     dispatch({ type: "loading" });
-    fetch(`https://www.omdbapi.com/?apikey=28334d8e&${query}`)
+    fetch(`https://www.omdbapi.com/?${process.env.REACT_APP_K}&${query}`)
       .then((value) => value.json())
       .then((value) => {
         if (value.Error) dispatch({ type: "error", value: value.Error });
