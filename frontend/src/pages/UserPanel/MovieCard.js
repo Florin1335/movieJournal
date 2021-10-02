@@ -8,7 +8,7 @@ export default function MovieCard({ imdbID, date }) {
   useEffect(() => {
     setMovie(null);
     setError(null);
-    fetch(`https://www.omdbapi.com/?${process.env.REACT_APP_K}&i=${imdbID}`)
+    fetch(`https://www.omdbapi.com/?apikey=28334d8e&i=${imdbID}`)
       .then((value) => value.json())
       .then((value) => {
         if (value.Error) setError(value);
