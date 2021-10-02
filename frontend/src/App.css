@@ -45,9 +45,9 @@ main {
   width: 300px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 576px) {
   .sidebar-width {
-    width: 100%;
+    width: 90vw;
   }
 }
 
@@ -74,16 +74,6 @@ a {
 
 a:hover {
   color: inherit;
-}
-
-#divLeft {
-  background-image: url("http://localhost:3000/images/slice_0_0.png");
-  background-size: contain;
-}
-
-#divRight {
-  background-image: url("http://localhost:3000/images/slice_0_1.png");
-  background-size: contain;
 }
 
 .slopeBegin {

@@ -12,7 +12,7 @@ export default function SearchBar() {
   };
 
   return (
-    <form className="d-flex flex-row align-items-center">
+    <form className="d-flex flex-row align-items-center ms-4 ms-sm-0">
       <input
         value={query}
         onChange={(e) => setQuery(e.target.value)}

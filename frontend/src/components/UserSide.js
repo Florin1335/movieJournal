@@ -18,20 +18,38 @@ export default function UserSide() {
       {!isAuth ? (
         <div className="d-flex flex-column">
           <button
-            className="btn btn-white"
+            className="btn btn-white p-0"
             type="button"
             data-bs-toggle="modal"
             data-bs-target="#registerModal"
           >
-            Register
+            <button
+              type="button"
+              className="btn btn-white w-100 h-100 p-1"
+              data-bs-target="#target"
+              data-bs-toggle="collapse"
+              aria-expanded="false"
+              aria-controls="target"
+            >
+              Register
+            </button>
           </button>
           <button
-            className="btn btn-white mt-2"
+            className="btn btn-white mt-2 p-0"
             type="button"
             data-bs-toggle="modal"
             data-bs-target="#loginModal"
           >
-            Login
+            <button
+              type="button"
+              className="btn btn-white w-100 h-100 p-1"
+              data-bs-target="#target"
+              data-bs-toggle="collapse"
+              aria-expanded="false"
+              aria-controls="target"
+            >
+              Login
+            </button>
           </button>
         </div>
       ) : (

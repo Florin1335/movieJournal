@@ -25,14 +25,14 @@ export default function ScrollToTopButton() {
     return (
       <button
         type="button"
-        className="btn btn-white"
+        className="btn btn-white opacity-25"
         onClick={handleClick}
         style={{ position: "fixed", bottom: 0, right: 0 }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="5rem"
-          height="5rem"
+          width="3rem"
+          height="3rem"
           fill="currentColor"
           className="bi bi-arrow-up-circle"
           viewBox="0 0 16 16"

@@ -12,7 +12,7 @@ export default function AdvancedSearchPage() {
     e.preventDefault();
     setError(null);
     if (title === "") {
-      setError("Titlul este obligatoriu!");
+      setError("The title is required!");
     } else {
       let query = `s=${title}`;
       if (type) query += `&type=${type}`;
